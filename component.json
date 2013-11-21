@@ -1,0 +1,14 @@
+{
+  "name": "no-cache",
+  "repo": "johntron/no-cache",
+  "description": "Plugin for visionmedia/superagent that adds headers to all requests that prevents caching",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
