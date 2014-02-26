@@ -5,10 +5,13 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {},
-  "development": {},
+  "development": {
+    "johntron/superagent": "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [
-    "index.js"
+    "index.js",
+	"test.js"
   ]
 }
