@@ -10,19 +10,20 @@
 
   Install with [component(1)](http://component.io):
 
-    $ component install johntron/superagent-no-cache
-
+```bash
+$ component install johntron/superagent-no-cache
+```
 ## API
-
-	var request = require('request'),
-		no_cache = require('superagent-no-cache');
-		
-	request.get('/url')
-		.use(no_cache)
-		.end(function () {
-			// do something
-		});
-
+```javascript
+var request = require('request'),
+    no_cache = require('superagent-no-cache');
+  
+request.get('/url')
+    .use(no_cache)
+    .end(function () {
+        // do something
+    });
+```
 ## License
 
   MIT
