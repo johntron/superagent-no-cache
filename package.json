@@ -1,0 +1,19 @@
+{
+  "name": "superagent-no-cache",
+  "version": "1.0.0",
+  "description": "Plugin for visionmedia/superagent that adds headers to all requests that prevents caching.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:johntron/superagent-no-cache.git"
+  },
+  "keywords": [
+    "superagent",
+    "no-cache"
+  ],
+  "author": "John Syrinek <john.syrinek@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/johntron/superagent-no-cache/issues"
+  },
+  "homepage": "https://github.com/johntron/superagent-no-cache"
+}
