@@ -1,17 +1,22 @@
-var ie = require('ie');
-
-function with_query_strings(request) {
-    request._query = [Date.now().toString()]
-    return request;
+var ie
+try {
+  ie = require('ie')
+} catch (e) {
+  ie = require('component-ie')
 }
 
-module.exports = function (request) {
-	request.set('X-Requested-With', 'XMLHttpRequest');
-	request.set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1');
+function with_query_strings (request) {
+  request._query = [Date.now().toString()]
+  return request
+}
 
-    if (ie) {
-        with_query_strings(request);
-    }
+module.exports = function _superagentNoCache (request) {
+  request.set('X-Requested-With', 'XMLHttpRequest')
+  request.set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1')
 
-	return request;
-};
+  if (ie) {
+    with_query_strings(request)
+  }
+
+  return request
+}
