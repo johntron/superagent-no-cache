@@ -10,11 +10,11 @@ function with_query_strings (request) {
   return request
 }
 
-module.exports = function _superagentNoCache (request) {
+module.exports = function _superagentNoCache (request, mockIE) {
   request.set('X-Requested-With', 'XMLHttpRequest')
   request.set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1')
 
-  if (ie) {
+  if (ie || mockIE) {
     with_query_strings(request)
   }
 
