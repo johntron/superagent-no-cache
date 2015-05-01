@@ -1,16 +1,40 @@
 {
   "name": "superagent-no-cache",
-  "repo": "johntron/superagent-no-cache",
+  "repository": "https://github.com/johntron/superagent-no-cache.git",
   "description": "Plugin for visionmedia/superagent that adds headers to all requests that prevents caching",
   "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {
-      "component/ie": "0.0.1"
+  "keywords": [
+    "superagent",
+    "cache",
+    "request",
+    "AJAX"
+  ],
+  "author": "John Syrinek <john.syrinek@gmail.com>",
+  "contributors": [
+    "Trent Oswald <trentoswald@therebelrobot.com> [@therebelrobot] (http://therebelrobot.com)"
+  ],
+  "bugs": {
+    "url": "https://github.com/johntron/superagent-no-cache/issues"
   },
-  "development": {},
+  "homepage": "https://github.com/johntron/superagent-no-cache",
   "license": "MIT",
   "main": "index.js",
-  "scripts": [
-    "index.js"
-  ]
+  "scripts": {
+    "test": "./node_modules/standard/bin/cmd.js; ./node_modules/istanbul/lib/cli.js cover _mocha --"
+  },
+  "standard": {
+    "ignore": [
+      "**/test/**"
+    ]
+  },
+  "dependencies": {
+    "component-ie": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "istanbul": "^0.3.13",
+    "mocha": "^2.2.4",
+    "mock-browser": "^0.90.33",
+    "standard": "^3.7.2"
+  }
 }
