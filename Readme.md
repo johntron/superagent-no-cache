@@ -4,10 +4,6 @@
   Plugin for visionmedia/superagent that adds headers to all requests that prevents 
   caching
 
-## Known issues
-
-There is a currently known issue with naming conventions between [component.io](http://component.io) and [npm](http://npmjs.org). Component lists the package as `no-cache`, while npm lists it as `superagent-no-cache`. This causes issues when `require()` tries to pull in the different name. I'm working on fixing that this week. **~@therebelrobot Tues May 12 2015**
-
 ## Installation
 ### Using Component
   Install with [component(1)](http://component.io):
@@ -23,14 +19,18 @@ $ npm install --save superagent-no-cache
 ```javascript
 var request = require('request')
 var noCache = require('superagent-no-cache')
-// var noCache = require('no-cache') // if installed via component. Refer above Known Issues
   
 request.get('/url')
     .use(noCache)
-    .end(function () {
+    .end(function _requestCallback() {
         // do something
     });
 ```
+
+## Contributing
+
+To come soon...
+
 ## License
 
 The MIT License (MIT)
