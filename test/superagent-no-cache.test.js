@@ -101,7 +101,7 @@ function _specIEExistingQuery (done) {
   expect(results._query[0])
       .to.be.a('string')
   expect(results._query[0])
-      .to.match(/^param=123&buster=[0-9].*$/)
+      .to.match(/^param=123&[0-9].*$/)
   done();
 }
 

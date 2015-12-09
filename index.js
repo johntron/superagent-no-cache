@@ -8,7 +8,7 @@ try {
 function with_query_strings (request) {
   var timestamp = Date.now().toString()
   if (request._query !== undefined && request._query[0]) {
-    request._query[0] += '&buster=' + timestamp
+    request._query[0] += '&' + timestamp
   } else {
     request._query = [timestamp]
   }
