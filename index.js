@@ -6,7 +6,13 @@ try {
 }
 
 function with_query_strings (request) {
-  request._query = [Date.now().toString()]
+  var timestamp = Date.now().toString()
+  if (request._query !== undefined && request._query[0]) {
+    request._query[0] += '&' + timestamp
+  } else {
+    request._query = [timestamp]
+  }
+
   return request
 }
 

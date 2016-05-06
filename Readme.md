@@ -29,7 +29,11 @@ request.get('/url')
 
 ## Contributing
 
-To come soon...
+To run the tests install mocha and run:
+
+```bash
+$ mocha test/superagent-no-cache.test.js
+```
 
 ## License
 

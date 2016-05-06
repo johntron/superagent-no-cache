@@ -19,6 +19,7 @@ function _suiteMain () {
   it('should require the "set" subfunction', _specSetCheck)
   it('should run the "set" subfunction, assigning the appropriate values', _specSetRun)
   it('should add an additional query for IE browsers', _specIE)
+  it('should add an additional param to an existing query string for IE browsers', _specIEExistingQuery)
 }
 
 /* Specs */
@@ -40,7 +41,7 @@ function _specSetCheck (done) {
     expect(error)
       .to.be.an('object')
     expect(error.toString())
-      .to.equal('TypeError: undefined is not a function')
+      .to.contain('TypeError')
     done()
   }
 }
@@ -59,7 +60,7 @@ function _specSetRun (done) {
   expect(results.data['Cache-Control'])
     .to.be.a('string')
   expect(results.data['Cache-Control'])
-    .to.equal('no-cache,no-store,must-revalidate,max-age=-1')
+    .to.equal('no-cache,no-store,must-revalidate,max-age=-1,private')
 
   expect(results._query)
     .to.be.an('undefined')
@@ -75,7 +76,7 @@ function _specIE (done) {
   expect(results.data['X-Requested-With'])
     .to.equal('XMLHttpRequest')
   expect(results.data['Cache-Control'])
-    .to.equal('no-cache,no-store,must-revalidate,max-age=-1')
+    .to.equal('no-cache,no-store,must-revalidate,max-age=-1,private')
   expect(results._query)
     .to.be.an('array')
   expect(results._query[0])
@@ -83,6 +84,25 @@ function _specIE (done) {
   expect(results._query[0].substring(0, results._query[0].length - 1))
     .to.equal(Date.now().toString().substring(0, results._query[0].length - 1))
   done()
+}
+function _specIEExistingQuery (done) {
+  var request = {
+    set:_mockSet,
+    _query: ['param=123'], // random query string
+    data:{}
+  };
+  var results = nocache(request, true);
+  expect(results.data['X-Requested-With'])
+      .to.equal('XMLHttpRequest')
+  expect(results.data['Cache-Control'])
+      .to.equal('no-cache,no-store,must-revalidate,max-age=-1,private')
+  expect(results._query)
+      .to.be.an('array')
+  expect(results._query[0])
+      .to.be.a('string')
+  expect(results._query[0])
+      .to.match(/^param=123&[0-9].*$/)
+  done();
 }
 
 /* Mocks */
