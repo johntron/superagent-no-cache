@@ -17,7 +17,7 @@ $ npm install --save superagent-no-cache
 ```
 ## API
 ```javascript
-var request = require('request')
+var request = require('superagent')
 var noCache = require('superagent-no-cache')
   
 request.get('/url')
