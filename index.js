@@ -1,9 +1,4 @@
-var ie
-try {
-  ie = require('ie')
-} catch (e) {
-  ie = require('component-ie')
-}
+var ie = require('component-ie')
 
 function with_query_strings (request) {
   var timestamp = Date.now().toString()
