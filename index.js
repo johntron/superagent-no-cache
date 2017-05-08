@@ -1,4 +1,4 @@
-var ie = require('component-ie')
+var isNode = Object.prototype.toString.call(typeof process !== 'undefined' ? process : 0) === '[object process]'
 
 function with_query_strings (request) {
   var timestamp = Date.now().toString()
@@ -16,7 +16,7 @@ module.exports = function _superagentNoCache (request, mockIE) {
   request.set('Expires', '-1')
   request.set('Cache-Control', 'no-cache,no-store,must-revalidate,max-age=-1,private')
 
-  if (ie || mockIE) {
+  if ((!isNode && require('component-ie')) || mockIE) {
     with_query_strings(request)
   }
 
