@@ -2,7 +2,7 @@
   "name": "superagent-no-cache",
   "repository": "https://github.com/johntron/superagent-no-cache.git",
   "description": "Plugin for visionmedia/superagent that adds headers to all requests that prevents caching",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "keywords": [
     "superagent",
     "cache",
@@ -20,21 +20,9 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/standard/bin/cmd.js; ./node_modules/istanbul/lib/cli.js cover _mocha --"
-  },
-  "standard": {
-    "ignore": [
-      "**/test/**"
-    ]
-  },
-  "dependencies": {
-    "component-ie": "^1.0.0"
+    "test": "mocha ."
   },
   "devDependencies": {
-    "chai": "^2.3.0",
-    "istanbul": "^0.3.13",
-    "mocha": "^2.2.4",
-    "mock-browser": "^0.90.33",
-    "standard": "^3.7.2"
+    "mocha": "^2.2.4"
   }
 }
